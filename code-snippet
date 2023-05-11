@@ -1,0 +1,14 @@
+<?php
+// Retrieve the URL of the translated page from weglot
+$translated_url = weglot_get_current_url();
+
+// Verify if current URL is the original URL of the page
+if ($translated_url !== get_permalink()) {
+  $link_url = $translated_url;
+}
+else {
+  $link_url = 'YOUR_BUTTON_LINK_URL_HERE';
+}
+
+// Use the $link_url variable as the href attribute value for your button
+echo '<a href="' . esc_url($link_url) . '">BUTTON TEXT HERE</a>';       
